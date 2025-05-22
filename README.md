@@ -4,11 +4,11 @@ This is the repository for the final project of the course Deep Learning from th
 
 This project implements the following:
 
-1) data_prep.py
+1) data_prep.py \n
 Uses open source stock data and the FNSPID dataset, which is a dataset containing news summaries. Merges these to ensure sufficient data for a long enough time horizon.
 We then select a portfolio of 5-8 stocks, ideally with negative correlation between them to ensure portfolio diversification, manage risk while maintaining returns.
 
-2) sentiment.py
+2) sentiment.py \n
 Using FinBERT, a sentiment score is calculated for the news summary of each company, creating column "company_sentiment". This is left empty for now if there are no news available for that specific day. 
 Also, companies are grouped per sector. For example, supposing Microsoft, a tech company is in the portfolio. Then, 3 companies in the Tech sector act as proxies for the entire Tech sector, for example these could be Apple, IBM and NVIDIA. The average sentiment score for these 3 companies is used to create a new feature, "sector_sentiment". Is left empty if there are no news available that particular day for these specific companies. 
 
