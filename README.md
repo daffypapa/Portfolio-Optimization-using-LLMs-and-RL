@@ -19,14 +19,5 @@ Using the YahooFinance data, popular technical indicators are calculated for eac
 The FNSPID dataset is used to construct a Company_Sentiment for the companies in the portfolio but also a Sector_Sentiment, as the average sentiment of the companies in the same sector. 
 Please note that the Company_Sentiment values are -1 for negative, 0 for neutral and 1 for positive. The Sector_Sentiment will also be a value from -1 to 1.
 
-Date       Ticker Close Tech_Ind_1 .... Tech_Ind_2 Company_Sentiment Sector_Sentiment.
-2020-01-01 A
-2020-01-01 B
-2020-01-01 C
-2020-01-01 D
-2020-01-01 E
-2020-01-01 F
-2020-01-01 G
-2020-01-02 etc.
 
 3) 
