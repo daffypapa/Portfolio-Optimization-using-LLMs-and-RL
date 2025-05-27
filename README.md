@@ -1,6 +1,6 @@
 # Portfolio-Optimization-using-LLMs-and-RL
 
-This is the repository for the final project of the course Deep Learning from the master's degree in Computer Science at the Athens University of Economics and Business.
+This is the repository for the final project of the course Deep Learning from the master's degree in Computer Science at the Athens University of Economics and Business, a course taken as part of my duties as a first year PhD student.
 
 This project implements the following:
 
