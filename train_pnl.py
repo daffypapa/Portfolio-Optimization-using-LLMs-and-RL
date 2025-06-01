@@ -3,6 +3,7 @@ import json
 from finrl.agents.stablebaselines3.models import DRLAgent
 from env_stocktrading_portfolio_allocation import StockPortfolioEnv
 from evaluate_strategy import evaluate_trading_model
+from utils import standardize_by_ticker
 import pandas as pd
 import numpy as np
 
@@ -14,6 +15,20 @@ validation_path = "/content/validation_data.pkl"
 
 train_data = pd.read_pickle(train_path)
 validation_data = pd.read_pickle(validation_path)
+
+feature_cols = [
+    "macd", "rsi_30", "cci_30", "dx_30", "close_30_sma",
+    "close_60_sma", "close", "close_logdiff",
+    "close_30_sma_logdiff", "close_60_sma_logdiff",
+    "company_sentiment", "sector_sentiment"
+]
+
+# Add covariance columns to the features to standardize them as well
+cov_cols = [col for col in df.columns if col.startswith("cov_")]
+feature_cols += cov_cols
+
+train_data = standardize_by_ticker(train_data, feature_cols)
+validation_data = standardize_by_ticker(validation_data, feature_cols)
 
 # Define common kwargs 
 stock_dimension = len(train_data.tic.unique())
