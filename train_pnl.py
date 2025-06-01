@@ -24,7 +24,7 @@ feature_cols = [
 ]
 
 # Add covariance columns to the features to standardize them as well
-cov_cols = [col for col in df.columns if col.startswith("cov_")]
+cov_cols = [col for col in train_data.columns if col.startswith("cov_")]
 feature_cols += cov_cols
 
 train_data = standardize_by_ticker(train_data, feature_cols)
