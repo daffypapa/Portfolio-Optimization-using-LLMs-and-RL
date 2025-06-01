@@ -203,7 +203,7 @@ class StockPortfolioEnv(gym.Env):
             self.reward = self.reward_scaling * self.reward
 
             # Clip reward to -10 and 10 range
-            self.reward = np.clip(self.reward, -10, 10)
+            #self.reward = np.clip(self.reward, -10, 10)
 
         return self.state, self.reward, self.terminal, {}
 
