@@ -10,7 +10,7 @@ from config_pnl import algorithms
 
 
 train_path = "/content/train_data.pkl"
-validation_path = /content/validation_data.pkl"
+validation_path = "/content/validation_data.pkl"
 
 train_data = pd.read_pickle(train_path)
 validation_data = pd.read_pickle(validation_path)
