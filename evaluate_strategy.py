@@ -13,7 +13,12 @@ def evaluate_trading_model(env, model):
         action, _states = model.predict(obs)
         obs, reward, done, _ = env.step(action)
 
-    return compute_metrics(env)
+    results = compute_metrics(env)
+
+    #results["actions_memory"] = env.actions_memory
+    results["actions_memory"] = [list(a) for a in env.actions_memory]
+    
+    return results
 
 def compute_metrics(env):
     """
