@@ -108,8 +108,6 @@ class StockPortfolioEnv(gym.Env):
         # load data from a pandas dataframe
         self.covs_list = [col for col in self.df.columns.tolist() if "cov_" in col]
         self.features = self.tech_indicator_list + self.covs_list
-        # Normalize features
-        self.df[self.features] = (self.df[self.features] - self.df[self.features].mean()) / self.df[self.features].std()
         self.data = self.df.loc[self.day,:]
         
         self.state = self.data[self.features].to_numpy() # numpy array of 8x20 each day. 8 stocks, 20 features (indicators + 8 covariances)
