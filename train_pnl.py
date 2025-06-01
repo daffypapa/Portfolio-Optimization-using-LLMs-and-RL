@@ -32,7 +32,7 @@ common_env_kwargs = {
     "action_space": stock_dimension,
     "tech_indicator_list": tech_indicator_list,
     "reward_mode": "pnl",
-    "reward_scaling": 1.0,
+    "reward_scaling": 100.0,
     "risk_free_rate": 0.0
 }
 
