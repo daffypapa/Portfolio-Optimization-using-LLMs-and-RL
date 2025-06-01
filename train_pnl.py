@@ -65,7 +65,7 @@ for algo_name, hyperparam_list in algorithms.items():
         # Train model
         #model.learn(total_timesteps=512) # Small for debug now
         #model.learn(total_timesteps=102400)
-        model.learn(total_timesteps=1024000)
+        model.learn(total_timesteps=204800)
 
         # Save model
         model_path = os.path.join(run_dir, "final_model.zip")
