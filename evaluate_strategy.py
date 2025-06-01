@@ -16,7 +16,7 @@ def evaluate_trading_model(env, model):
     results = compute_metrics(env)
 
     #results["actions_memory"] = env.actions_memory
-    results["actions_memory"] = [list(a) for a in env.actions_memory]
+    results["actions_memory"] = [float(x) for x in action] for action in env.actions_memory
     
     return results
 
