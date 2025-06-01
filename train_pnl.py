@@ -18,7 +18,7 @@ validation_data = pd.read_pickle(validation_path)
 
 feature_cols = [
     "macd", "rsi_30", "cci_30", "dx_30", "close_30_sma",
-    "close_60_sma", "close", "close_logdiff",
+    "close_60_sma", "close_logdiff",
     "close_30_sma_logdiff", "close_60_sma_logdiff",
     "company_sentiment", "sector_sentiment"
 ]
@@ -46,8 +46,8 @@ common_env_kwargs = {
     "state_space": state_space,
     "action_space": stock_dimension,
     "tech_indicator_list": tech_indicator_list,
-    "reward_mode": "pnl",
-    "reward_scaling": 100.0,
+    "reward_mode": "sharpe",
+    "reward_scaling": 1.0,
     "risk_free_rate": 0.0
 }
 
