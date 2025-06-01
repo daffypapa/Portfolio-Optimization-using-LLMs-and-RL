@@ -9,8 +9,8 @@ import numpy as np
 from config_pnl import algorithms
 
 
-train_path = r"C:\Users\tpapa\OneDrive\Desktop\PhD Work\Portfolio-Optimization-using-LLMs-and-RL\data\train_data.pkl"
-validation_path = r"C:\Users\tpapa\OneDrive\Desktop\PhD Work\Portfolio-Optimization-using-LLMs-and-RL\data\validation_data.pkl"
+train_path = "/content/train_data.pkl"
+validation_path = /content/validation_data.pkl"
 
 train_data = pd.read_pickle(train_path)
 validation_data = pd.read_pickle(validation_path)
