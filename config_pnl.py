@@ -1,5 +1,15 @@
 ppo_hyperparameters = [
     {
+    "n_steps": 20_480,
+    "ent_coef": 0.01,
+    "learning_rate": 0.001,
+    "batch_size": 5_120,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.3,
+    "vf_coef": 0.5,
+},
+    {
     "n_steps": 2048,
     "ent_coef": 0.01,
     "learning_rate": 3e-4,
