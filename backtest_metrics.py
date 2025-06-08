@@ -52,7 +52,8 @@ def compute_metrics(env):
 
     # CR
     log_returns = np.diff(np.log(portfolio_values))  
-    cumulative_return = np.exp(log_returns.sum()) - 1
+    #cumulative_return = np.exp(log_returns.sum()) - 1
+    cumulative_return = np.exp(log_returns.sum())
 
     # SR
     pnl = np.diff(portfolio_values)
