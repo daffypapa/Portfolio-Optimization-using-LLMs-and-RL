@@ -80,3 +80,33 @@ def compute_metrics(env):
         "asset_values": portfolio_values,
         "cumulative_daily_returns": cumulative_daily_returns
     }
+
+def compute_metrics_from_prices(prices):
+    portfolio_values = prices.values
+
+    log_returns = np.diff(np.log(portfolio_values))
+    cumulative_return = np.exp(log_returns.sum()) - 1
+
+    pnl = np.diff(portfolio_values)
+    mean_pnl = pnl.mean()
+    std_pnl = pnl.std()
+    sharpe_ratio = (np.sqrt(252) * mean_pnl / std_pnl) if std_pnl != 0 else 0.0
+
+    daily_vol = log_returns.std()
+    annualized_volatility = daily_vol * np.sqrt(252)
+
+    cumulative_max = np.maximum.accumulate(portfolio_values)
+    drawdowns = (portfolio_values - cumulative_max) / cumulative_max
+    max_drawdown = drawdowns.min()
+
+    cumulative_log_returns = np.cumsum(log_returns)
+    cumulative_daily_returns = np.exp(cumulative_log_returns) - 1
+
+    return {
+        "cumulative_return": cumulative_return,
+        "sharpe_ratio": sharpe_ratio,
+        "annualized_volatility": annualized_volatility,
+        "max_drawdown": max_drawdown,
+        "asset_values": portfolio_values,
+        "cumulative_daily_returns": cumulative_daily_returns
+    }
