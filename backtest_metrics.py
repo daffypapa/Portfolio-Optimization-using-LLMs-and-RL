@@ -81,8 +81,11 @@ def compute_metrics(env):
         "cumulative_daily_returns": cumulative_daily_returns
     }
 
-def compute_metrics_from_prices(prices):
-    portfolio_values = prices.values
+def compute_metrics_from_prices(prices, initial_investment=1_000_000):
+    prices = np.asarray(prices).flatten()
+    
+    scaled_prices = prices / prices[0] * initial_investment
+    portfolio_values = scaled_prices
 
     log_returns = np.diff(np.log(portfolio_values))
     cumulative_return = np.exp(log_returns.sum()) - 1
@@ -90,7 +93,7 @@ def compute_metrics_from_prices(prices):
     pnl = np.diff(portfolio_values)
     mean_pnl = pnl.mean()
     std_pnl = pnl.std()
-    sharpe_ratio = (np.sqrt(252) * mean_pnl / std_pnl) if std_pnl != 0 else 0.0
+    sharpe_ratio = (np.sqrt(252) * mean_pnl / std_pnl) if std_pnl != 0 else np.nan
 
     daily_vol = log_returns.std()
     annualized_volatility = daily_vol * np.sqrt(252)
