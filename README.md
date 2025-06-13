@@ -67,5 +67,5 @@ Final script which uses the backtest_metrics.py to compute metrics for the test 
 
 Results: 
 
-![alt text](https://github.com/[daffypapa]/[Portfolio-Optimization-using-LLMs-and-RL]/blob/[main]/portfolio value plot.png?raw=true)
+![plot](https://github.com/[daffypapa]/[Portfolio-Optimization-using-LLMs-and-RL]/blob/[main]/portfolio value plot.png?raw=true)
 
