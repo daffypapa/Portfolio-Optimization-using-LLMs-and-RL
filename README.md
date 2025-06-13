@@ -64,3 +64,8 @@ Utility script containing metric calculation functions for the final backtest ev
 
  
 Final script which uses the backtest_metrics.py to compute metrics for the test data and also create the plot presented in the paper.
+
+Results: 
+
+![alt text](https://github.com/[daffypapa]/[Portfolio-Optimization-using-LLMs-and-RL]/blob/[main]/portfolio value plot.png?raw=true)
+
