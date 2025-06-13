@@ -20,4 +20,29 @@ The FNSPID dataset is used to construct a Company_Sentiment for the companies in
 Please note that the Company_Sentiment values are -1 for negative, 0 for neutral and 1 for positive. The Sector_Sentiment will also be a value from -1 to 1.
 
 
-3) 
+3) env_stocktrading_portfolio_allocation.py
+
+
+4) utils.py
+
+
+5) evaluate_strategy.py 
+Simplified code to evaluate trading strategies. Used in the training loops to compare different hyperparameter configurations based on their Cumulative Return and Sharpe Ratio. Please note that the calculations here are slightly different than in backtest_metrics.py so there might be some small discrepancy in the values of CR or SR calculated by evaluate_strategy.py versus backtest_metrics.py. However, since the transformations applied to calculate these metrics are increasing, the results and choices made remain correct and properly justified. The only slight difference might be some small percentage point differences.  
+
+6) config_pnl.py
+Hyperparameter configuration settings for the hyperparameter tuning training run train_pnl.py. 
+
+7) train_pnl.py
+Smaller training run compared to the final one. Uses different hyperparameter configurations for all four training algorithms. After a model is trained, it is saved and evaluated on the validation data. This enabled a comparison between different hyperparameter settings. We choose the best configuration for each model based on the metrics calculated in evaluate_strategy.py.
+
+8) config_final.py
+Contains a dictionary for each algorithm with the final hyperparameter configuration.
+
+9) train_final.py  
+Final training script. Uses the configuration from config_final.py to train and save four different models (one for each deep RL algorithm). These models are trained for more timesteps compared to the hyperparameter tuning run and are also trained on a dataset containing both the train and validation data from train_pnl.py. 
+
+10) backtest_metrics.py
+Utility script containing metric calculation functions for the final backtest evaluation. These metrics are calculated exactly as they are presented in the paper.
+
+11) backtest.ipynb
+Final script which uses the backtest_metrics.py to compute metrics for the test data and also create the plot presented in the paper.
