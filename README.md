@@ -23,12 +23,12 @@ Please note that the Company_Sentiment values are -1 for negative, 0 for neutral
 3) env_stocktrading_portfolio_allocation.py
 
 
-Test
+This script contains the OpenAI gym environment for the portfolio allocation task. Handles all the observation, state, reward logic. This environment is ensured to be compatible with FinRL and Stable-Baselines3 for model training.
 
 4) utils.py
 
 
-Test
+Simple helper script containing a standardization by ticker function, helpful for scaling the data before training to ensure that price differences in stock closing prices do not affect the model training. 
 
 5) evaluate_strategy.py
 
